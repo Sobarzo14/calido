@@ -46,10 +46,11 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="classes"
+        name="(courses)"
         options={{
-          headerTitle: "Classes",
-          title: "Classes",
+          headerTitle: "Courses",
+          headerShown: false,
+          title: "Courses",
         }}
       />
       <Tabs.Screen
