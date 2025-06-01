@@ -5,25 +5,28 @@ import AboutTab from './AboutTab';
 import EventsAttendedTab from './EventsAttendedTab';
 import PostsTab from './PostsTab';
 
+
 const Tab = createMaterialTopTabNavigator();
 
-const MyTabs = createMaterialTopTabNavigator({
-    screens: {
-        Posts: PostsTab,
-        Events: EventsAttendedTab,
-        About: AboutTab
-    },
-});
 
 const ProfileTabs = () => {
 
 
     return (
-        <Tab.Navigator>
+
+        <Tab.Navigator
+            screenOptions={{
+                tabBarActiveTintColor: 'black',
+                tabBarInactiveTintColor: 'gray',
+                tabBarStyle: { backgroundColor: '#white' },
+                tabBarIndicatorStyle: { backgroundColor: 'black' },
+            }}
+        >
             <Tab.Screen name="Posts" component={PostsTab} />
             <Tab.Screen name="Events" component={EventsAttendedTab} />
             <Tab.Screen name="About" component={AboutTab} />
         </Tab.Navigator>
+
     )
 }
 

@@ -1,6 +1,7 @@
 import React from "react";
 import {
   SafeAreaView,
+  ScrollView,
   StyleSheet
 } from "react-native";
 
@@ -11,8 +12,11 @@ import ProfileTabs from "./ProfileTabs";
 const ProfilePage = () => {
   return (
     <SafeAreaView>
-      <ProfileDetails />
-      <ProfileTabs />
+      <ScrollView>
+        <ProfileDetails />
+
+        <ProfileTabs />
+      </ScrollView>
     </SafeAreaView>
   );
 };

@@ -12,7 +12,6 @@ const CoursesPage = () => {
     <SafeAreaView style={{ marginTop: 0 }}>
       <SearchBar onSearch={handleSearch} />
       <View className='recommendedCourses'>
-
       </View>
       <CourseCard />
     </SafeAreaView>
