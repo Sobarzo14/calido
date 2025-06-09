@@ -1,7 +1,10 @@
 import { useColorScheme } from "@/hooks/useColorScheme";
+import { defaultConfig } from '@tamagui/config/v4';
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import "react-native-reanimated";
+import { createTamagui, TamaguiProvider } from 'tamagui';
+
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
@@ -13,20 +16,13 @@ export default function RootLayout() {
     // Async font loading only occurs in developme nt.
     return null;
   }
-
+  const config = createTamagui(defaultConfig)
   return (
-    <Stack>
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      <Stack.Screen name="+not-found" />
-    </Stack>
+    <TamaguiProvider config={config}>
+      <Stack>
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="+not-found" />
+      </Stack>
+    </TamaguiProvider>
   );
-  // return (
-  //   <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-  //     <Stack>
-  //       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-  //       <Stack.Screen name="+not-found" />
-  //     </Stack>
-  //     <StatusBar style="auto" />
-  //   </ThemeProvider>
-  // );
 }

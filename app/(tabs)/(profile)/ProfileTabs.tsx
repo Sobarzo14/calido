@@ -27,6 +27,7 @@ const ProfileTabs = () => {
             <Tab.Screen name="About" component={AboutTab} />
         </Tab.Navigator>
 
+
     )
 }
 

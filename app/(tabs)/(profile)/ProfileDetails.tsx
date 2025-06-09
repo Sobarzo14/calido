@@ -1,5 +1,6 @@
 import React from 'react';
-import { Dimensions, Image, StyleSheet, Text, TouchableOpacity, View, } from 'react-native';
+import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Avatar } from 'tamagui';
 
 const windowWidth = Dimensions.get("window").width;
 
@@ -7,20 +8,13 @@ const ProfileDetails = () => {
     return (
         <View>
             <View className="profilePhotos" style={styles.profilePhotos}>
-                <Image
-                    style={styles.backgroundImage}
-                    source={{
-                        uri: "https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?cs=srgb&dl=pexels-olly-762020.jpg&fm=jpg",
-                    }}
-                    resizeMode="cover"
-                    blurRadius={5}
-                />
-                <Image
-                    style={styles.profilePicture}
-                    source={{
-                        uri: "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
-                    }}
-                />
+                <Avatar circular size="$10">
+                    <Avatar.Image
+                        accessibilityLabel="Cam"
+                        src="https://images.unsplash.com/photo-1548142813-c348350df52b?&w=150&h=150&dpr=2&q=80"
+                    />
+                    <Avatar.Fallback backgroundColor="$blue10" />
+                </Avatar>
             </View>
             <View style={styles.profileDetails}>
                 <Text style={styles.name}>Abelardo Sobarzo</Text>
@@ -53,7 +47,7 @@ export default ProfileDetails
 const styles = StyleSheet.create({
     profilePhotos: {
         width: "100%",
-        backgroundColor: "black",
+        paddingTop: 20,
         alignItems: "center",
     },
     backgroundImage: {

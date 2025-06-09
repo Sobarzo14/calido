@@ -1,7 +1,8 @@
 import React from 'react'
 import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 
-const Setting = () => {
+const Setting = (text: string, type: string, link: string) => {
+
     return (
         <TouchableOpacity>
             <Text>Setting</Text>
@@ -11,4 +12,6 @@ const Setting = () => {
 
 export default Setting
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+
+})
