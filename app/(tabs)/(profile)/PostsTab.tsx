@@ -1,6 +1,5 @@
 import React from 'react';
-import { StyleSheet, useWindowDimensions, View } from 'react-native';
-import { Image, ScrollView } from 'tamagui';
+import { Image, ScrollView, StyleSheet, useWindowDimensions, View } from 'react-native';
 
 
 const PostsTab = () => {
@@ -13,14 +12,14 @@ const PostsTab = () => {
 
                 {Array.from({ length: 21 }).map((_, index) => (
                     <Image
-                        borderWidth={1}
-                        borderColor={'white'}
                         key={index}
-                        source={{
-                            uri: 'https://picsum.photos/200/300',
-                            width: width / 3,
-                            height: width / 3,
-                        }}
+                        source={{ uri: `https://picsum.photos/seed/${index}/200/200` }}
+                        style={{
+                            width: (width - 32) / 3, // 32 is for padding
+                            height: (width - 32) / 3,
+                            marginBottom: 2,
+                        }
+                        }
                     />
                 ))}
 

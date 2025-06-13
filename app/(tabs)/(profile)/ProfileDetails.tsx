@@ -1,6 +1,6 @@
+import { Avatar } from '@rneui/base';
 import React from 'react';
 import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { Avatar } from 'tamagui';
 
 const windowWidth = Dimensions.get("window").width;
 
@@ -8,12 +8,12 @@ const ProfileDetails = () => {
     return (
         <View>
             <View className="profilePhotos" style={styles.profilePhotos}>
-                <Avatar circular size="$10">
-                    <Avatar.Image
-                        accessibilityLabel="Cam"
-                        src="https://images.unsplash.com/photo-1548142813-c348350df52b?&w=150&h=150&dpr=2&q=80"
-                    />
-                    <Avatar.Fallback backgroundColor="$blue10" />
+                <Avatar
+                    size={100}
+                    rounded
+                    source={{ uri: "https://randomuser.me/api/portraits/men/36.jpg" }}
+                >
+
                 </Avatar>
             </View>
             <View style={styles.profileDetails}>
